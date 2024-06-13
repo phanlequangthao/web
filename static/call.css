@@ -1,3 +1,13 @@
+/* Button Hover Effect */
+button, .actionButton, .dialActionButton {
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover, .actionButton:hover, .dialActionButton:hover {
+  background-color: #ff7f50; 
+  transform: scale(1.05);
+}
+
 .dialWrapper {
   width: 300px;
   background-color: antiquewhite;
@@ -60,17 +70,40 @@
 
 /* Chat Container */
 #chat {
-  width: 80%;
-  max-width: 600px;
-  background: #f9f9f9;
-  margin: 20px auto;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 10px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  background: #ffffff;
+  border-radius: 15px;
+  padding: 15px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 }
 
+/* Shadow Effect */
+#chat, .dialWrapper, .incomingWrapper {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
 
+#chat:hover, .dialWrapper:hover, .incomingWrapper:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+#message-list li {
+  border-radius: 15px;
+  padding: 10px;
+  margin-bottom: 5px;
+}
+#btn-send-msg {
+  border-radius: 15px;
+  background-color: #007bff;
+  color: white;
+}
+#btn-send-msg:hover {
+  background-color: #0056b3;
+}
 #message-list {
   list-style: none;
   padding: 0;
@@ -93,12 +126,10 @@
 }
 
 
-#chat input[type="text"] {
-  width: calc(100% - 90px);
+#chat-input {
+  border-radius: 15px;
+  border: 1px solid #ddd;
   padding: 10px;
-  margin-right: 10px;
-  border: 2px solid #ccc;
-  border-radius: 4px;
 }
 
 #chat button {

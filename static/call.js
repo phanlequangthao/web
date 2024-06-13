@@ -588,6 +588,27 @@ function handleRemoteStreamRemoved(event) {
     remoteVideo.srcObject = null;
     localVideo.srcObject = null;
 }
+function showElement(elementId) {
+    document.getElementById(elementId).classList.remove('hidden');
+    document.getElementById(elementId).classList.add('visible');
+}
+
+function hideElement(elementId) {
+    document.getElementById(elementId).classList.remove('visible');
+    document.getElementById(elementId).classList.add('hidden');
+}
+
+function login() {
+    let userName = document.getElementById('userNameInput').value;
+    myName = userName;
+    hideElement('userName');
+    showElement('call');
+
+    document.getElementById('nameHere').innerHTML = userName;
+    showElement('userInfo');
+
+    connectSocket();
+}
 
 window.onbeforeunload = function () {
     if (callInProgress) {
